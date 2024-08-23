@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "cd client && npm run dev"
+    "dev": "concurrently \"cd client && npm run dev\" \"cd server && python manage.py runserver 5000\"",
+    "start": "cd client && npm run dev && cd .. && cd server && pip freeze > requirements.txt && pip install -r requirements.txt && python manage.py collectstatic --noinput"
   },
   "keywords": [],
   "author": "",
