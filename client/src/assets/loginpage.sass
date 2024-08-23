@@ -1,0 +1,106 @@
+@import './Mixins'
+
+$breakpoint1: 450px
+
+#position-container
+    display: flex
+    justify-content: center
+    align-items: center
+    // background-image: url()
+    background: rgb(61, 58, 58)
+    height: 100vh
+    // background-position: center
+    // background-size: cover
+    .form-container
+        position: relative
+        width: 400px
+        height: 450px
+        background: transparent
+        border: none
+        border-radius: 20px
+        backdrop-filter: blur(15px) brightness(80%)
+        display: flex
+        justify-content: center
+        align-items: center
+        @include mediaQuery($breakpoint1)
+            min-width: 290px
+            margin: 0 20px
+            padding: 0 30px
+        form
+            @include mediaQuery($breakpoint1)
+                width: 100%
+            h2
+                font-size: 2em
+                color: #fff
+                text-align: center
+            .input-container
+                position: relative
+                margin: 30px 0
+                width: 310px
+                border-bottom: 2px solid #fff
+                @include mediaQuery($breakpoint1)
+                    width: 100%
+                box-icon
+                    position: absolute
+                    right: 8px
+                    color: #fff
+                    font-size: 1.2em
+                    top: 20px
+                input
+                    width: 100%
+                    height: 50px
+                    background: transparent
+                    border: none
+                    outline: none
+                    font-size: 1em
+                    padding: 0 35px 0 5px
+                    color: #fff
+                    &:focus ~ label, &:valid ~ label
+                        top: -5px
+                label
+                    position: absolute
+                    top: 50%
+                    left: 5px
+                    transform: translateY(-50%)
+                    color: #fff
+                    font-size: 1em
+                    pointer-events: none
+                    transition: 0.5s
+            .signInAssistance-container
+                margin: -10px 0 17px
+                font-size: 0.9em
+                color: #fff
+                display: flex
+                justify-content: space-between
+                input
+                    margin-right: 3px
+                a
+                    color: #fff
+                    text-decoration: none
+                    &:hover
+                        text-decoration: underline
+            button
+                width: 100%
+                height: 40px
+                border-radius: 40px
+                background: #fff
+                border: none
+                outline: none
+                cursor: pointer
+                font-size: 1em
+                font-weight: 600
+                transition: .5s
+                &:hover
+                    color: #fff
+                    background: #000000af
+            .register
+                font-size: 0.9em
+                color: #fff
+                text-align: center
+                margin: 25px 0 10px
+                p a
+                    text-decoration: none
+                    color: #fff
+                    font-weight: 600
+                &:hover
+                    text-decoration: underline
