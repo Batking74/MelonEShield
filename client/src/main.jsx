@@ -2,7 +2,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LoginPage from './pages/LoginPage.jsx';
 import { createRoot } from 'react-dom/client';
-import HomePage from './pages/HomePage.jsx';
+import SecurityChecklistPage from './pages/SecurityChecklistPage.jsx';
 import App from './App.jsx';
 
 // Stylesheet
@@ -19,7 +19,7 @@ const router = createBrowserRouter([{
     },
     {
       path: '/Home',
-      element: <HomePage />
+      element: <SecurityChecklistPage />
     },
   ]
 }]);
