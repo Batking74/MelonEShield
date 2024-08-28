@@ -3,3 +3,12 @@
 @mixin mediaQuery($width)
     @media screen and (max-width: $width)
         @content
+
+
+// Styles Nativation Tracker
+@mixin navTrackerStyles($bottom, $left, $width, $height)
+    bottom: $bottom
+    left: $left
+    width: $width
+    height: $height
+    background: #e1dad5

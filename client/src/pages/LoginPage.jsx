@@ -65,10 +65,10 @@ export default function LoginPage() {
                         <input onInput={({ target }) => setPassword(target.value)} type="text" id="password" required />
                         <label htmlFor="password">Password</label>
                     </div>
-                    <div>
+                    {/* <div>
 
                         <p>kifnfn</p>
-                    </div>
+                    </div> */}
                     <div className="signInAssistance-container">
                         <label htmlFor="RememberMe"><input type="checkbox" id="RememberMe" />Remember Me</label>
                         <Link id="forgotPassword" to='#'>Forgot Password</Link>

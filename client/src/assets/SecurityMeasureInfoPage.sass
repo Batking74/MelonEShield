@@ -1,0 +1,84 @@
+@import './Mixins'
+
+$breakpoint1: 1400px
+$breakpoint2: 1100px
+$breakpoint3: 1000px
+$breakpoint4: 750px
+$breakpoint5: 650px
+$breakpoint6: 450px
+
+#SecurityMeasure-Info-Container
+    display: flex
+    flex-direction: column
+    align-items: center
+    row-gap: 100px
+    padding: 50px 15vw
+    min-height: 100vh
+    font-family: Arial, sans-serif
+    background: #101114
+    @include mediaQuery($breakpoint3)
+        padding: 50px 10vw
+    section
+        display: flex
+        flex-direction: column
+        align-items: center
+        row-gap: 20px
+        text-align: center
+        box-icon
+            width: 100px
+            height: 100px
+        h2
+            font-size: 2.5rem
+            color: #ff0000
+        p
+            color: #F9F9F9
+            font-size: 16px
+            line-height: 1.6
+            strong
+                color: #2c3e50
+
+.heading
+    text-align: center
+    font-weight: 500
+    font-size: 3rem
+    text-transform: capitalize
+    @include mediaQuery($breakpoint1)
+        font-size: 3.35rem
+    @include mediaQuery($breakpoint2)
+        font-size: 2.95rem
+    @include mediaQuery($breakpoint5)
+        font-size: 2.45rem
+
+.Key-Takeaway-Card-Container
+    display: flex
+    color: #F9F9F9
+    gap: 50px
+    font-size: 1.5rem
+    letter-spacing: 1px
+    @include mediaQuery($breakpoint4)
+        flex-direction: column
+    div
+        border: 0.5px solid rgba(255, 255, 255, 0.5)
+        width: clamp(280px, 40vw, 40vw)
+        border-radius: 28px
+        padding: 3rem 1rem
+        transition: .5s
+        @include mediaQuery($breakpoint4)
+            font-size: 1rem
+            width: 100%
+            max-width: none
+        @include mediaQuery($breakpoint6)
+            min-width: 290px
+        ul
+            li
+                display: flex
+                align-items: center
+                text-align: start
+                font-size: 0.9rem
+                @include mediaQuery($breakpoint6)
+                    font-size: 0.85rem
+                box-icon
+                    margin-left: 12px
+                    max-width: 30px
+                    @include mediaQuery($breakpoint6)
+                        max-width: 20px

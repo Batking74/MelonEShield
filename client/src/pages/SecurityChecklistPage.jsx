@@ -1,98 +1,184 @@
 // Importing Modules/Packages
-import { Fragment, useState } from "react";
-
-const securityMeasures = [
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, explicabo.',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, explicabo.',
-    'Lorem ipsum dolor sit amet consectetur.',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, explicabo.',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, explicabo.',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, explicabo.',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, explicabo.',
-]
-
-/*
-Input Validation: Ensure proper input validation to prevent SQL injection, XSS, etc.
-Authentication and Authorization: Verify that all applications have secure authentication and proper role-based access controls.
-Patch Management: Regularly update and patch software and applications.
-Secure Coding Practices: Follow secure coding guidelines to minimize vulnerabilities.
-API Security: Secure APIs with proper authentication, authorization, and encryption.
-
-
-Data Security
-Data Encryption: Ensure data is encrypted both at rest and in transit.
-Data Backup: Implement regular data backup procedures and test backups periodically.
-Data Classification: Classify data based on sensitivity and apply appropriate security controls.
-Data Loss Prevention (DLP): Deploy DLP solutions to prevent unauthorized data access or transfer.
-Access Control: Implement strict access controls to sensitive data.
-
-
-User Security
-Password Policies: Enforce strong password policies and regular password changes.
-Multi-Factor Authentication (MFA): Implement MFA for all critical systems and applications.
-Security Awareness Training: Provide regular training to users on recognizing phishing attacks, social engineering, etc.
-Account Management: Regularly review and manage user accounts, including deactivation of inactive accounts.
-Incident Reporting: Establish clear protocols for users to report security incidents.
-
-
-Disaster Recovery and Business Continuity
-Disaster Recovery Plan: Create and regularly test a disaster recovery plan.
-Business Continuity Plan: Develop a business continuity plan to ensure critical operations can continue during a disruption.
-Backup and Restoration Procedures: Implement and regularly test backup and restoration procedures.
-Redundancy and Failover: Ensure redundancy and failover mechanisms are in place for critical systems.
-Communication Plan: Establish a communication plan for use during emergencies.
-
-
-
-
-*/
-
-
+import { securityMeasures, createDynamicSecurityMeasure } from "../helpers/data";
+import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 
 
 export default function SecurityChecklistPage() {
+    // Declaring Variables/State Variables
+    const learnMore = 'Learn more about this security measure and how to Implement it.';
     const [SecurityMeasures, setSecurityMeasures] = useState(securityMeasures);
+    const [CompletedMeasures, setCompletedMeasures] = useState(SecurityMeasures.filter(measure => measure.IsComplete));
+    const newPercentage = parseInt((SecurityMeasures.length > 0 ? (CompletedMeasures.length / SecurityMeasures.length) * 100 : 0).toFixed(0));
+    const [MeasureWasDeleted, setMeasureWasDeleted] = useState(false);
+    const [Percent, setPercent] = useState(newPercentage);
     const [InputValue, setInputValue] = useState('');
+    const [Details, setDetails] = useState({});
+    let [Counter, setCounter] = useState(0);
+
+    // Creates a New Security Measure, and Updates Progress
     const createSecurityMeasure = (e) => {
         e.preventDefault();
         if (InputValue.length != '') {
-            setSecurityMeasures([...SecurityMeasures, InputValue.trim()]);
+            const newSecurityMeasures = [...SecurityMeasures, createDynamicSecurityMeasure(SecurityMeasures, InputValue)];
+            const newPercentage = parseInt((newSecurityMeasures.length > 0 ? (CompletedMeasures.length / newSecurityMeasures.length) * 100 : 0).toFixed(0));
+            setSecurityMeasures(newSecurityMeasures);
+            setCounter(Percent);
+            setPercent(newPercentage);
+            if (Counter < newPercentage) setMeasureWasDeleted(false);
+            else setMeasureWasDeleted(true);
             e.target.children[0].value = '';
         }
     }
+
+    // Deletes a Security Measure
     const deleteSecurityMeasure = (e) => {
-        let arr = SecurityMeasures.filter((o, i) => parseInt(e.target.id) != i);
-        setSecurityMeasures(arr);
+        const { previousSibling } = e.target.parentElement.previousSibling.previousSibling.previousSibling;
+        const targetId = parseInt(previousSibling.id.split('-')[1]);
+        let arr = SecurityMeasures.filter(({ id }) => targetId != id);
+        checkSecurityMeasure({ target: previousSibling, RemovedItemArray: arr });
     }
+
+    // Display's Popup about Security Measures
     const viewSecurityMeasureDetails = (e) => {
-        console.log('help')
+        const id = parseInt(e.target.id.split('-')[1]) - 1;
+        const f = document.querySelector('#dialog');
+        setDetails(securityMeasures[id]);
+        document.documentElement.style.overflow = 'hidden';
+        f.showModal();
     }
+
+    // Closes Popup
+    const closeSecurityMeasureDetails = ({ target }) => {
+        target.parentElement.parentElement.close();
+        document.documentElement.style.overflow = 'auto';
+    }
+
+    // Checks the security measure for completeness and updates the progress
+    const checkSecurityMeasure = ({ target, RemovedItemArray }) => {
+        const id = parseInt(target.id.split('-')[1]);
+        const index = SecurityMeasures.findIndex(measure => measure.id == id);
+        if (RemovedItemArray) {
+            const newCompletedMeasures = RemovedItemArray.filter(measure => measure.IsComplete);
+            const newPercentage = parseInt((RemovedItemArray.length > 0 ? (newCompletedMeasures.length / RemovedItemArray.length) * 100 : 0).toFixed(0));
+            setCounter(Percent);
+            setSecurityMeasures([...RemovedItemArray]);
+            setPercent(newPercentage);
+            setCompletedMeasures(newCompletedMeasures);
+            if (Counter < newPercentage) setMeasureWasDeleted(false);
+            else setMeasureWasDeleted(true);
+            return;
+        }
+        if (!SecurityMeasures[index].IsComplete) SecurityMeasures[index].IsComplete = true;
+        else if (Counter != 0) {
+            const newCompletedMeasures = SecurityMeasures.filter(measure => measure.IsComplete);
+            const newPercentage = parseInt((SecurityMeasures.length > 0 ? (newCompletedMeasures.length / SecurityMeasures.length) * 100 : 0).toFixed(0));
+            SecurityMeasures[index].IsComplete = false;
+            setMeasureWasDeleted(true);
+            setCounter(Percent);
+            setCompletedMeasures(newCompletedMeasures);
+            setPercent(newPercentage);
+        }
+        setSecurityMeasures(SecurityMeasures);
+        const newCompletedMeasures = SecurityMeasures.filter(measure => measure.IsComplete);
+        const newPercentage = parseInt((SecurityMeasures.length > 0 ? (newCompletedMeasures.length / SecurityMeasures.length) * 100 : 0).toFixed(0));
+        setCompletedMeasures(newCompletedMeasures);
+        setPercent(newPercentage);
+    }
+    useEffect(() => {
+        const finalDashOffset = parseInt(Math.abs(472 - 472 * (Percent / 100)));
+        const keyframes = [{ offset: 1, strokeDashoffset: finalDashOffset }];
+        const options = { duration: 2000, easing: 'linear', fill: 'forwards' };
+        const circle = document.querySelector('#circle');
+        circle.animate(keyframes, options);
+
+        setInterval(() => {
+            if (Counter != Percent && !MeasureWasDeleted) {
+                Counter += 1;
+                setCounter(Counter);
+            }
+            if (Counter != Percent && MeasureWasDeleted) {
+                Counter -= 1;
+                setCounter(Counter);
+            }
+            if (Counter == Percent) {
+                setMeasureWasDeleted(false);
+                clearInterval();
+            }
+        }, 30);
+    }, [Percent, SecurityMeasures]);
+
+
+
+
     return (
         <main id="MelonEShield-Container">
-            <h1>MelonEShield Checklist</h1>
-            <div className="wrapper">
-                <div>
-                    <button>Best Practices</button>
-                    <button>Python</button>
-                    <button>Network Security</button>
-                    <button>Application Security</button>
-                    <button>King</button>
+            <div className="progress-container">
+                <div className="outer">
+                    <div className="inner">
+                        <div id="number">{Counter}%</div>
+                    </div>
                 </div>
-                <form onSubmit={createSecurityMeasure} id="Checklist-form" action="">
-                    <input onInput={({ target }) => setInputValue(target.value)} autoComplete="off" placeholder="Create a new security measure" type="text" id="create-SecurityMeasure-input" />
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                    <defs>
+                        <linearGradient id="GradientColor">
+                            <stop offset="0%" stopColor="#e91e63" />
+                            <stop offset="100%" stopColor="#673ab7" />
+                        </linearGradient>
+                    </defs>
+                    <circle id="circle" cx="80" cy="80" r="70" strokeLinecap="round" strokeWidth="20" />
+                </svg>
+            </div>
+            <div className="wrapper">
+                <h1>MelonEShield Checklist</h1>
+                <div>
+                    <button>All</button>
+                    <button>Completed</button>
+                    <button>Not Completed</button>
+                    <button>SEO</button>
+                    <button>Performance</button>
+                    <button>SEO (Search Engine Optimization)</button>
+                    <button>Application Security</button>
+                    <button>Usability and User Experience</button>
+                </div>
+                <form onSubmit={createSecurityMeasure} id="Checklist-form">
+                    <input
+                        onInput={({ target }) => setInputValue(target.value)}
+                        autoComplete="off"
+                        placeholder="Create a new security measure"
+                        type="text"
+                        id="create-SecurityMeasure-input" />
                     <button id="create-button">ADD</button>
                 </form>
+                <dialog id="dialog">
+                    <div className="dialog-heading-container">
+                        <h2>Details</h2>
+                        <box-icon onClick={closeSecurityMeasureDetails} name='x'></box-icon>
+                    </div>
+                    <div className="dialog-details-container">
+                        <box-icon name='alarm-exclamation'></box-icon>
+                        <p>{Details.Description}</p>
+                        <Link to={`/Home/SecurityMeasureInfo/:${Details.id}`}>{learnMore}</Link>
+                    </div>
+                    <div className="dialog-button-container">
+                        <button onClick={closeSecurityMeasureDetails}>Close</button>
+                    </div>
+                </dialog>
                 <ul id="Security-Checklist">
                     {
-                        SecurityMeasures.map((shieldStep, i) => {
-                            const id = `SecurityMeasure-${i}`
+                        SecurityMeasures.map(({ SecurityMeasure, id }) => {
+                            const identifier = `SecurityMeasure-${id}`
                             return (
-                                <li key={i} className="SecurityMeasure" >
-                                    <input type="checkbox" id={id} />
-                                    <label className="custom-checkbox" htmlFor={id}><box-icon name='check'></box-icon></label>
-                                    <label htmlFor={id} className="SecurityMeasure-text">{shieldStep}</label>
-                                    <button onClick={viewSecurityMeasureDetails} aria-label="delete-button" className="delete-button"><box-icon id={i} color='#4A4D57' name='help-circle'></box-icon></button>
-                                    <button onClick={deleteSecurityMeasure} aria-label="delete-button" className="delete-button"><box-icon id={i} color='#4A4D57' name='trash'></box-icon></button>
+                                <li key={id} className="SecurityMeasure" >
+                                    <input onInput={checkSecurityMeasure} type="checkbox" id={identifier} />
+                                    <label className="custom-checkbox" htmlFor={identifier}><box-icon name='check'></box-icon></label>
+                                    <label htmlFor={identifier} className="SecurityMeasure-text">{SecurityMeasure}</label>
+                                    <button aria-label="delete-button" className="delete-button">
+                                        <box-icon onClick={viewSecurityMeasureDetails} id={`${identifier}-help`} color='#4A4D57' name='help-circle'></box-icon>
+                                    </button>
+                                    <button aria-label="delete-button" className="delete-button">
+                                        <box-icon onClick={deleteSecurityMeasure} id={`${identifier}-delete`} color='#4A4D57' name='trash'></box-icon>
+                                    </button>
                                 </li>
                             );
                         })
@@ -100,5 +186,5 @@ export default function SecurityChecklistPage() {
                 </ul>
             </div>
         </main >
-    )
+    );
 }

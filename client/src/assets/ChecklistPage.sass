@@ -5,7 +5,8 @@ $primary-color: #1C1D20
 $secondary-color: #4A4D57
 $accent-color: #ff0000
 $text-color: #F9F9F9
-$breakpoint1: 500px
+$breakpoint1: 900px
+$breakpoint2: 500px
 
 #MelonEShield-Container
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
@@ -17,8 +18,44 @@ $breakpoint1: 500px
     display: flex
     flex-direction: column
     align-items: center
-    @include mediaQuery($breakpoint1)
+    justify-content: center
+    @include mediaQuery($breakpoint2)
         font-size: 12pt
+    .progress-container
+        width: 160px
+        height: 160px
+        position: relative
+        .outer
+            height: 160px
+            width: 160px
+            border-radius: 50%
+            display: flex
+            justify-content: center
+            align-items: center
+            // padding: 20px
+            box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7)
+            .inner
+                height: 120px
+                width: 120px
+                border-radius: 50%
+                display: flex
+                justify-content: center
+                align-items: center
+                box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7), -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05)
+                #number
+                    font-weight: 600
+                    color: #555
+        svg
+            position: absolute
+            top: 0
+            left: 0
+            transition: 2s
+            circle
+                fill: none
+                stroke: url(#GradientColor)
+                stroke-width: 20px
+                stroke-dasharray: 472
+                stroke-dashoffset: 472
     h1
         margin: 100px 0 20px 0
         font-size: 3rem
@@ -26,7 +63,7 @@ $breakpoint1: 500px
         text-transform: uppercase
         text-align: center
         color: $accent-color
-        @include mediaQuery($breakpoint1)
+        @include mediaQuery($breakpoint2)
             margin-top: 50px
             font-size: 2rem
     .wrapper
@@ -61,12 +98,73 @@ $breakpoint1: 500px
                 font-weight: 600
                 color: $background
                 cursor: pointer
-                @include mediaQuery($breakpoint1)
+                @include mediaQuery($breakpoint2)
                     position: unset
                     width: 100%
                     margin-top: 10px
                     padding: 15px
                     height: auto
+        #dialog
+            position: fixed
+            top: 10vh
+            left: 20vw
+            right: 20vw
+            font-size: 1.2rem
+            min-width: 60vw
+            max-width: 60vw
+            @include mediaQuery($breakpoint1)
+                font-size: 1rem
+                left: 10vw
+                right: 10vw
+                min-width: 80vw
+                max-width: 80vw
+            @include mediaQuery($breakpoint2)
+                font-size: 0.9rem
+                top: 15vh
+            &::backdrop
+                background: #000000ad
+            .dialog-heading-container, .dialog-details-container, .dialog-button-container
+                padding: 0 50px
+            .dialog-heading-container
+                display: flex
+                align-items: center
+                background: green
+                padding: 20px
+                h2
+                    flex-grow: 1
+                box-icon
+                    min-width: 40px
+                    min-height: 40px
+                    &:hover
+                        cursor: pointer
+            .dialog-details-container
+                display: flex
+                flex-direction: column
+                text-align: center
+                align-items: center
+                row-gap: 30px
+                padding: 0 50px
+                @include mediaQuery($breakpoint1)
+                    row-gap: 20px
+                    padding: 0 30px
+                box-icon
+                    min-width: 130px
+                    min-height: 130px
+                    @include mediaQuery($breakpoint2)
+                        min-width: 100px
+                        min-height: 100px
+                p
+            .dialog-button-container
+                border-top: solid #000 1px
+                text-align: right
+                margin: 10px 0 0 0
+                button
+                    margin: 20px 0
+                    width: 90px
+                    height: 40px
+                    @include mediaQuery($breakpoint2)
+                        width: 80px
+                        height: 30px
         #Security-Checklist
             .SecurityMeasure
                 margin-bottom: 10px
