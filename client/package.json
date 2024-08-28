@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npm i && npm run sass && npm run build && vite",
-    "build": "vite build",
+    "build": "npm i && vite build",
     "sass": "sass src/assets/main.scss src/assets/output/main.min.css --no-source-map --style=compressed",
     "start": "npm i && npm run sass && npm run build"
   },
