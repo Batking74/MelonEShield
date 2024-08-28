@@ -18,14 +18,14 @@ const router = createBrowserRouter([{
   children: [
     {
       index: true,
-      element: <LoginPage />
-    },
-    {
-      path: '/Home',
       element: <SecurityChecklistPage />
     },
+    // {
+    //   path: '/Home',
+    //   element: <SecurityChecklistPage />
+    // },
     {
-      path: '/Home/SecurityMeasureInfo/:id',
+      path: '/SecurityMeasureInfo/:id',
       element: <SecurityMeasureInfo />
     },
   ]

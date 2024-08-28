@@ -1,4 +1,4 @@
-export const securityMeasures = [
+export let securityMeasures = [
     {
         id: 1,
         SecurityMeasure: 'I Implemented Strong Password Policies',
@@ -625,11 +625,12 @@ export const securityMeasures = [
         ]
     }
 ];
+let length = 32;
 
 
 export const createDynamicSecurityMeasure = (SecurityMeasures, InputValue) => {
     return {
-        id: SecurityMeasures.length + 1,
+        id: length++,
         SecurityMeasure: InputValue.trim(),
         IsComplete: false,
         Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolor alias quisquam fugit earum minima laborum, exercitationem numquam maiores quo? Animi debitis ad corporis, accusantium optio modi a libero veritatis?',

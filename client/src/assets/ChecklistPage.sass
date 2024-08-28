@@ -1,10 +1,4 @@
 @import './Mixins'
-
-$background: #101114
-$primary-color: #1C1D20
-$secondary-color: #4A4D57
-$accent-color: #ff0000
-$text-color: #F9F9F9
 $breakpoint1: 900px
 $breakpoint2: 500px
 
@@ -32,7 +26,6 @@ $breakpoint2: 500px
             display: flex
             justify-content: center
             align-items: center
-            // padding: 20px
             box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7)
             .inner
                 height: 120px
@@ -57,7 +50,7 @@ $breakpoint2: 500px
                 stroke-dasharray: 472
                 stroke-dashoffset: 472
     h1
-        margin: 100px 0 20px 0
+        margin: 50px 0 50px 0
         font-size: 3rem
         font-weight: 800
         text-transform: uppercase
@@ -66,6 +59,32 @@ $breakpoint2: 500px
         @include mediaQuery($breakpoint2)
             margin-top: 50px
             font-size: 2rem
+    .Filter-btn-Container
+        padding: 2em 0 2em 0
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-wrap: wrap
+        button
+            margin: 0.5em
+            padding: 0.5rem 1.5em
+            font-size: 1.1rem
+            border: none
+            background: #111
+            box-shadow: 0 0 5px
+            color: $text-color
+            border: 2px solid #111
+            border-radius: 0.2em
+            cursor: pointer
+            transition: 0.3s
+            @include mediaQuery($breakpoint1)
+                font-size: 0.9rem
+            @include mediaQuery($breakpoint2)
+                font-size: 0.8rem
+            
+            &:hover
+                background: #fff
+                color: #111
     .wrapper
         width: 700px
         max-width: 100%
@@ -128,7 +147,7 @@ $breakpoint2: 500px
             .dialog-heading-container
                 display: flex
                 align-items: center
-                background: green
+                background: gold
                 padding: 20px
                 h2
                     flex-grow: 1

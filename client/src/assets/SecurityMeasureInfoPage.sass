@@ -15,7 +15,7 @@ $breakpoint6: 450px
     padding: 50px 15vw
     min-height: 100vh
     font-family: Arial, sans-serif
-    background: #101114
+    background: $background
     @include mediaQuery($breakpoint3)
         padding: 50px 10vw
     section
@@ -29,9 +29,9 @@ $breakpoint6: 450px
             height: 100px
         h2
             font-size: 2.5rem
-            color: #ff0000
+            color: $accent-color
         p
-            color: #F9F9F9
+            color: $text-color
             font-size: 16px
             line-height: 1.6
             strong
@@ -51,7 +51,7 @@ $breakpoint6: 450px
 
 .Key-Takeaway-Card-Container
     display: flex
-    color: #F9F9F9
+    color: $text-color
     gap: 50px
     font-size: 1.5rem
     letter-spacing: 1px
