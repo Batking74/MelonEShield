@@ -4,10 +4,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"cd client && npm run dev\" \"cd server && python manage.py runserver 5000\"",
-    "build": "cd client && npm start && cd .. && cd server && pip install -r requirements.txt && python manage.py collectstatic --noinput",
-    "client": "cd client && npm start",
-    "server": "cd server && python -m venv venv && source venv/Scripts/activate && pip freeze > requirements.txt && pip install -r requirements.txt && python manage.py collectstatic --noinput",
-    "packages": "cd server && pip freeze > requirements.txt",
+    "build": "cd client && npm run build && cd .. && cd server && pip freeze > requirements.txt && pip install -r requirements.txt && python manage.py collectstatic --noinput",
+    "client": "cd client && npm run build",
     "static": "cd server && python manage.py collectstatic"
   },
   "keywords": [],
