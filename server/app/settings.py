@@ -12,7 +12,7 @@ SECRET_KEY = getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'https://meloneshield.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://meloneshield.onrender.com']
 
 # Application definition
 
