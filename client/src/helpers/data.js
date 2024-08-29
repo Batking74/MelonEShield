@@ -1,4 +1,4 @@
-export let securityMeasures = [
+export const securityMeasures = [
     {
         id: 1,
         SecurityMeasure: 'I Implemented Strong Password Policies',
