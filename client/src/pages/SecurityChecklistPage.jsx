@@ -123,7 +123,6 @@ export default function SecurityChecklistPage() {
     return (
         <main id="MelonEShield-Container">
             {/* <NavigationComponent /> */}
-            <h1>MelonEShield TaskMinder</h1>
             <div className="progress-container">
                 <div className="outer">
                     <div className="inner">

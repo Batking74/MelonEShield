@@ -623,9 +623,29 @@ export const securityMeasures = [
             'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
             'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
         ]
+    },
+    {
+        id: 32,
+        SecurityMeasure: 'I Implemented a Preloader',
+        IsComplete: false,
+        Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolor alias quisquam fugit earum minima laborum, exercitationem numquam maiores quo? Animi debitis ad corporis, accusantium optio modi a libero veritatis?',
+        ReasonsForMeasure: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ],
+        MeasureRecommendations: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ]
     }
 ];
-let length = 32;
+let length = 33;
 
 
 export const createDynamicSecurityMeasure = (SecurityMeasures, InputValue) => {
