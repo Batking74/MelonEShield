@@ -122,6 +122,7 @@ export default function SecurityChecklistPage() {
 
     return (
         <main id="MelonEShield-Container">
+            <button className="print-btn" onClick={() => window.print()}>Print</button>
             {/* <NavigationComponent /> */}
             <div className="progress-container">
                 <div className="outer">

@@ -9,3 +9,15 @@
 @import './ChecklistPage.sass';
 @import './SecurityMeasureInfoPage.sass';
 @import './NavigationComponent.sass';
+
+@media print {
+    .print-btn,
+    .Filter-btn-Container,
+    #Checklist-form,
+    box-icon {
+        display: none !important;
+    }
+    .progress-container {
+        margin-bottom: 100px;
+    }
+}

@@ -886,15 +886,6 @@ export const securityMeasures = [
     },
 ];
 
-
-
-
-
-
-
-
-
-
 let length = 45;
 
 
