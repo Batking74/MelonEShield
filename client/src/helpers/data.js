@@ -643,9 +643,259 @@ export const securityMeasures = [
             'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
             'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
         ]
-    }
+    },
+    {
+        id: 33,
+        SecurityMeasure: 'I Implemented a .gitignore file',
+        IsComplete: false,
+        Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolor alias quisquam fugit earum minima laborum, exercitationem numquam maiores quo? Animi debitis ad corporis, accusantium optio modi a libero veritatis?',
+        ReasonsForMeasure: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ],
+        MeasureRecommendations: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ]
+    },
+    {
+        id: 34,
+        SecurityMeasure: 'I compressed, optimized, and formatted images for better performance',
+        IsComplete: false,
+        Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolor alias quisquam fugit earum minima laborum, exercitationem numquam maiores quo? Animi debitis ad corporis, accusantium optio modi a libero veritatis?',
+        ReasonsForMeasure: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ],
+        MeasureRecommendations: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ]
+    },
+    {
+        id: 35,
+        SecurityMeasure: 'I Implemented lazy loading of images for better performance',
+        IsComplete: false,
+        Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolor alias quisquam fugit earum minima laborum, exercitationem numquam maiores quo? Animi debitis ad corporis, accusantium optio modi a libero veritatis?',
+        ReasonsForMeasure: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ],
+        MeasureRecommendations: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ]
+    },
+    {
+        id: 36,
+        SecurityMeasure: 'All images are webp format',
+        IsComplete: false,
+        Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolor alias quisquam fugit earum minima laborum, exercitationem numquam maiores quo? Animi debitis ad corporis, accusantium optio modi a libero veritatis?',
+        ReasonsForMeasure: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ],
+        MeasureRecommendations: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ]
+    },
+    {
+        id: 37,
+        SecurityMeasure: 'All videos are mp4/mov/webm format depending on which format is smaller',
+        IsComplete: false,
+        Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolor alias quisquam fugit earum minima laborum, exercitationem numquam maiores quo? Animi debitis ad corporis, accusantium optio modi a libero veritatis?',
+        ReasonsForMeasure: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ],
+        MeasureRecommendations: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ]
+    },
+    {
+        id: 38,
+        SecurityMeasure: 'All images and/or videos are lazy loaded',
+        IsComplete: false,
+        Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolor alias quisquam fugit earum minima laborum, exercitationem numquam maiores quo? Animi debitis ad corporis, accusantium optio modi a libero veritatis?',
+        ReasonsForMeasure: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ],
+        MeasureRecommendations: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ]
+    },
+    {
+        id: 39,
+        SecurityMeasure: 'All images and videos have the same aspect ratio',
+        IsComplete: false,
+        Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolor alias quisquam fugit earum minima laborum, exercitationem numquam maiores quo? Animi debitis ad corporis, accusantium optio modi a libero veritatis?',
+        ReasonsForMeasure: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ],
+        MeasureRecommendations: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ]
+    },
+    {
+        id: 40,
+        SecurityMeasure: 'I implemented a caching strategy for all assets',
+        IsComplete: false,
+        Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolor alias quisquam fugit earum minima laborum, exercitationem numquam maiores quo? Animi debitis ad corporis, accusantium optio modi a libero veritatis?',
+        ReasonsForMeasure: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ],
+        MeasureRecommendations: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ]
+    },
+    {
+        id: 41,
+        SecurityMeasure: 'I implemented a Content Delivery Network (CDN)',
+        IsComplete: false,
+        Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolor alias quisquam fugit earum minima laborum, exercitationem numquam maiores quo? Animi debitis ad corporis, accusantium optio modi a libero veritatis?',
+        ReasonsForMeasure: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ],
+        MeasureRecommendations: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ]
+    },
+    {
+        id: 42,
+        SecurityMeasure: 'I implemented Progressive Web App Technology (PWA) with service worker.',
+        IsComplete: false,
+        Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolor alias quisquam fugit earum minima laborum, exercitationem numquam maiores quo? Animi debitis ad corporis, accusantium optio modi a libero veritatis?',
+        ReasonsForMeasure: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ],
+        MeasureRecommendations: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ]
+    },
+    {
+        id: 43,
+        SecurityMeasure: 'I implemented a built tool to minify build and minify assets',
+        IsComplete: false,
+        Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolor alias quisquam fugit earum minima laborum, exercitationem numquam maiores quo? Animi debitis ad corporis, accusantium optio modi a libero veritatis?',
+        ReasonsForMeasure: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ],
+        MeasureRecommendations: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ]
+    },
+    {
+        id: 44,
+        SecurityMeasure: 'I implemented Low-Quality Image Placeholder (LQIP) for all images',
+        IsComplete: false,
+        Description: 'A specific term for the technique of using low-resolution images as placeholders to improve loading experiences.',
+        ReasonsForMeasure: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ],
+        MeasureRecommendations: [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.',
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit facilis velit.'
+        ]
+    },
 ];
-let length = 33;
+
+
+
+
+
+
+
+
+
+
+let length = 45;
 
 
 export const createDynamicSecurityMeasure = (SecurityMeasures, InputValue) => {
